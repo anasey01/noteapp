@@ -3,7 +3,7 @@ const ObjectID = require('mongodb').ObjectID;
 module.exports = function(app, db){
         app.get('/notes:id', (req, res) => {
         const id = req.params.id;
-        console.log(id);
+        //console.log(id);
         const details = {'_id' : new ObjectID(id)}
         db.collection('notes').findOne(details, (err, item) => {
             if (err){
